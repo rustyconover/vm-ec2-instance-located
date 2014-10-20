@@ -6,7 +6,6 @@ use strict;
 use warnings;
 use Net::DNS;
 
-
 =head1 NAME
 
 VM::EC2::Instance::Located - determine if code is executing on an EC2 instance
@@ -31,14 +30,17 @@ on an ec2 instance and fail otherwise.
 
 =head1 METHODS 
 
+=cut 
 
 =head2 at_ec2
 
 Determines if the code is running at EC2.
 
-Returns a boolean value answering the question.
+The answer is cached because typically the result does not change
+unless you're able to move processes between an EC2 instance an a non
+EC2 instance.
 
-=cut
+Returns a boolean value answering the question.
 
 =cut
 
